@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Promptify</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div class="brand-mark">✨</div>
+        <div>
+          <h1>Promptify</h1>
+          <p>Gemini-powered prompt optimization for ChatGPT.</p>
+        </div>
+      </header>
+
+      <section class="panel">
+        <label class="field-label" for="api-key">Gemini API key</label>
+        <div class="key-row">
+          <input id="api-key" type="password" autocomplete="off" placeholder="Paste your API key">
+          <button id="save-key" type="button">Save</button>
+        </div>
+        <p id="save-status" class="status-message" aria-live="polite"></p>
+      </section>
+
+      <section class="panel">
+        <label class="field-label" for="model-select">Gemini model</label>
+        <select id="model-select" class="model-dropdown">
+          <option value="gemini-3.5-flash">Gemini 3.5 Flash (Recommended)</option>
+          <option value="gemini-3-flash">Gemini 3 Flash</option>
+          <option value="gemini-3.5-pro">Gemini 3.5 Pro</option>
+          <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+          <option value="gemini-1.5-flash">Gemini 1.5 Flash (Legacy)</option>
+        </select>
+      </section>
+
+      <section class="panel toggle-panel">
+        <div>
+          <h2>Extension status</h2>
+          <p>Enable prompt optimization on ChatGPT.</p>
+        </div>
+        <label class="switch" for="enabled-toggle">
+          <input id="enabled-toggle" type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </section>
+
+      <section class="stats-grid" aria-label="Optimization stats">
+        <article class="stat-card">
+          <span>Total prompts optimized</span>
+          <strong id="total-optimized">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Estimated tokens saved</span>
+          <strong id="tokens-saved">0</strong>
+        </article>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
