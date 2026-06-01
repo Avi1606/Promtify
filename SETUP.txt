@@ -1,0 +1,64 @@
+PROMPTIFY - SETUP & USAGE GUIDE
+==========================================================================
+
+Thank you for using Promptify! This extension allows you to optimize your 
+ChatGPT prompts with Google's Gemini models directly before submitting them.
+
+Follow the instructions below to get everything up and running.
+
+
+1. HOW TO INSTALL THE EXTENSION IN CHROME
+--------------------------------------------------------------------------
+Since you have the source files, you can load Promptify as a developer 
+extension:
+
+  1. Open Google Chrome.
+  2. Navigate to: chrome://extensions/
+  3. Enable "Developer mode" by toggling the switch in the top-right corner.
+  4. Click the "Load unpacked" button in the top-left corner.
+  5. Select the "Promptify" folder containing these source files.
+  6. The extension is now installed and will appear in your Chrome toolbar!
+
+
+2. HOW TO GET A FREE GEMINI API KEY
+--------------------------------------------------------------------------
+Promptify uses Google's official Gemini API to optimize your prompts:
+
+  1. Go to Google AI Studio: https://aistudio.google.com/
+  2. Log in with your standard Google Account.
+  3. Click the "Get API key" button in the upper-left menu.
+  4. Click "Create API key" and select a Google Cloud project (or create a new one).
+  5. Copy your generated API key (it starts with "AIzaSy...").
+
+
+3. HOW TO CONFIGURING THE EXTENSION
+--------------------------------------------------------------------------
+  1. Click the Promptify extension icon (the Sparkles ✨ mark) in your 
+     Chrome extensions bar.
+  2. Paste your copied API key into the "Gemini API key" text field.
+  3. Click "Save".
+  4. Under "Gemini model", select your preferred model. 
+     - "Gemini 2.5 Flash" is highly recommended for balanced speed/intelligence.
+  5. Ensure "Extension status" is toggled to Enabled.
+
+
+4. HOW TO USE PROMPTIFY ON CHATGPT
+--------------------------------------------------------------------------
+  1. Go to ChatGPT: https://chatgpt.com/
+  2. Write a draft prompt inside the text box (e.g., "explain photosynthesis").
+  3. You will see a green "✨ Optimize" button sit next to the Send button.
+  4. Click the "✨ Optimize" button.
+  5. The extension will send your draft to Gemini, rewrite it for clarity 
+     and token efficiency, and replace your text box with the optimized version.
+  6. Review the prompt and click the standard Send button to submit it!
+
+
+SUPPORT & TROUBLESHOOTING
+--------------------------------------------------------------------------
+- "Error: API key is invalid": Ensure your key has no spaces or extra 
+  characters and that you clicked "Save" in the popup.
+- "Optimize button is missing": Reload the ChatGPT tab to let the extension 
+  inject the button into the fresh composer layout.
+- "ReferenceError / Deprecation": We have fully updated Promptify to use the 
+  latest GA Gemini 2.5 Flash model, resolving previous legacy errors.
+==========================================================================

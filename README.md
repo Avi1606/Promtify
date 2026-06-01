@@ -1,11 +1,11 @@
 # Promptify - Gemini Prompt Optimizer
 
-Promptify is a Manifest V3 Chrome extension that optimizes prompts on ChatGPT before you submit them. It sends your draft prompt to Google Gemini 1.5 Flash, rewrites it for clarity and token efficiency, then replaces the prompt in the ChatGPT composer.
+Promptify is a Manifest V3 Chrome extension that optimizes prompts on ChatGPT before you submit them. It sends your draft prompt to Google Gemini 2.5 Flash, rewrites it for clarity and token efficiency, then replaces the prompt in the ChatGPT composer.
 
 ## Features
 
 - Adds a small `Optimize` button beside the ChatGPT send button.
-- Uses Gemini 1.5 Flash through your own API key.
+- Uses Gemini 2.5 Flash through your own API key.
 - Stores the API key only in `chrome.storage.sync`; it is never hardcoded.
 - Shows a toast after optimization with estimated token savings.
 - Tracks total optimized prompts and estimated saved tokens.
@@ -46,7 +46,7 @@ Promptify is a Manifest V3 Chrome extension that optimizes prompts on ChatGPT be
 
 - `manifest.json` configures Manifest V3 permissions, service worker, popup, icons, and ChatGPT content script matching.
 - `content.js` injects the Optimize button, reads and replaces the ChatGPT prompt, shows toast messages, and adds the green glow animation.
-- `background.js` calls Gemini 1.5 Flash, estimates token savings, handles errors, and updates cumulative stats.
+- `background.js` calls Gemini 2.5 Flash, estimates token savings, handles errors, and updates cumulative stats.
 - `popup.html`, `popup.js`, and `popup.css` provide the settings and stats UI.
 - `icons/` contains placeholder PNG icons for Chrome extension loading.
 

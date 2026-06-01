@@ -1,6 +1,6 @@
 const STORAGE_DEFAULTS = {
   apiKey: "",
-  model: "gemini-3.5-flash",
+  model: "gemini-2.5-flash",
   enabled: true,
   totalOptimized: 0,
   tokensSaved: 0
@@ -36,7 +36,7 @@ chrome.storage.onChanged.addListener((changes, areaName) => {
 function loadPopupState() {
   chrome.storage.sync.get(STORAGE_DEFAULTS, (items) => {
     apiKeyInput.value = items.apiKey || "";
-    modelSelect.value = items.model || "gemini-3.5-flash";
+    modelSelect.value = items.model || "gemini-2.5-flash";
     enabledToggle.checked = Boolean(items.enabled);
     totalOptimized.textContent = formatNumber(items.totalOptimized);
     tokensSaved.textContent = formatNumber(items.tokensSaved);

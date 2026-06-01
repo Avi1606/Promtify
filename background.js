@@ -1,6 +1,6 @@
 const STORAGE_DEFAULTS = {
   apiKey: "",
-  model: "gemini-3.5-flash",
+  model: "gemini-2.5-flash",
   enabled: true,
   totalOptimized: 0,
   tokensSaved: 0
@@ -54,7 +54,7 @@ async function optimizePrompt(userPrompt) {
   }
 
   const beforeTokens = estimateTokens(prompt);
-  const optimizedPrompt = await callGemini(prompt, settings.apiKey, settings.model || "gemini-3.5-flash");
+  const optimizedPrompt = await callGemini(prompt, settings.apiKey, settings.model || "gemini-2.5-flash");
   const afterTokens = estimateTokens(optimizedPrompt);
   const savedTokens = Math.max(0, beforeTokens - afterTokens);
 
@@ -72,7 +72,7 @@ async function optimizePrompt(userPrompt) {
 }
 
 async function callGemini(userPrompt, apiKey, model) {
-  const modelName = model || "gemini-3.5-flash";
+  const modelName = model || "gemini-2.5-flash";
   const response = await fetch(`${GEMINI_BASE}${modelName}:generateContent?key=${encodeURIComponent(apiKey)}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
